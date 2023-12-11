@@ -2,17 +2,24 @@
 import countriesCapitalsMap from "countries-capitals-map";
 
 const CountriesCapitalsButton = () => {
-	const countries: string[] = Object.keys(countriesCapitalsMap);
-	const capitals: string[] = Object.values(countriesCapitalsMap);
+	const shuffle = (array: string[]) => {
+		return array.sort(() => Math.random() - 0.5);
+	};
+	const countries: string[] = shuffle(Object.keys(countriesCapitalsMap));
+	const capitals: string[] = shuffle(Object.values(countriesCapitalsMap));
 
 	return (
 		<>
-			{countries.map((countrie) => (
-				<button className="countries">{countrie}</button>
-			))}
-			{capitals.map((capital) => (
-				<button className="capitals">{capital}</button>
-			))}
+			<div className="countries">
+				{countries.map((countrie) => (
+					<button>{countrie}</button>
+				))}
+			</div>
+			<div className="capitals">
+				{capitals.map((capital) => (
+					<button>{capital}</button>
+				))}
+			</div>
 		</>
 	);
 };
