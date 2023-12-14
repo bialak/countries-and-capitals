@@ -10,13 +10,12 @@ const shuffle = (array: string[]) => {
 const countries: string[] = shuffle(Object.keys(countriesCapitalsMap));
 const capitals: string[] = shuffle(Object.values(countriesCapitalsMap));
 
-interface countries {
-	selectedCountry: string;
-}
-
 const CountriesCapitalsButtons = () => {
-	const [selectedCountry, setSelectedCountry] = useState(null); // TODO: missing typing - now you can set anything there
-	const [selectedCapital, setSelectedCapital] = useState(null);
+	const [selectedCountry, setSelectedCountry] = useState(""); // TODO: missing typing - now you can set anything there
+	const [selectedCapital, setSelectedCapital] = useState("");
+
+	const isPairSelected = selectedCountry && selectedCapital;
+	const isPairCorrect = isPairSelected && countriesCapitalsMap[selectedCountry] === selectedCapital;
 
 	const handleClick = (type: ButtonType, text: string) => {
 		if (type === ButtonType.CAPITAL) {
@@ -24,6 +23,27 @@ const CountriesCapitalsButtons = () => {
 		} else if (type === ButtonType.COUNTRY) {
 			setSelectedCountry(text);
 		}
+		if (!selectedCapital || !selectedCountry) return;
+		// if (countriesCapitalsMap[selectedCountry] === selectedCapital) {
+		// 	console.log("nana");
+		// }
+		// if (countriesCapitalsMap[selectedCountry] !== selectedCapital) {
+		// 	console.log("dada");
+		// }
+	};
+
+	const getButtonColor = (type: ButtonType, text: string): string | undefined => {
+		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
+		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
+		// not selected by user - let's keep the default color
+
+		if (!isSelectedCapital && !isSelectedCountry) return;
+		if (isPairSelected && !isPairCorrect) return "red";
+		if (isSelectedCapital || isSelectedCountry) return "blue";
+
+		// if (selectedCountry === text) return "blue";
+		// if (selectedCapital === text) return "blue";
+		if (isPairSelected && !isPairCorrect) return "red";
 	};
 
 	return (
@@ -31,7 +51,8 @@ const CountriesCapitalsButtons = () => {
 			<div className="countries">
 				{countries.map((country) => (
 					<Buttton
-						color={selectedCountry === country ? "#4009Bf" : undefined}
+						// color={selectedCountry === country ? "blue" : undefined}
+						color={getButtonColor(ButtonType.COUNTRY, country)}
 						type={ButtonType.COUNTRY}
 						text={country}
 						onClick={handleClick}
@@ -41,7 +62,7 @@ const CountriesCapitalsButtons = () => {
 			<div className="capitals">
 				{capitals.map((capital) => (
 					<Buttton
-						color={selectedCapital === capital ? "#4009Bf" : undefined}
+						color={getButtonColor(ButtonType.CAPITAL, capital)}
 						type={ButtonType.CAPITAL}
 						text={capital}
 						onClick={handleClick}
