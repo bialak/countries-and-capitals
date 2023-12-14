@@ -1,17 +1,18 @@
+export enum ButtonType {
+	COUNTRY = "COUNTRY",
+	CAPITAL = "CAPITAL",
+}
+// "4009Bff
 type ButtonProps = {
-	isActive: boolean;
+	color: string | undefined;
 	text: string;
-	onClick: () => void;
+	onClick: (type: ButtonType, text: string) => void;
+	type: ButtonType;
 };
 
-const Buttton = ({ isActive, text, onClick }: ButtonProps) => {
+const Buttton = ({ color, text, onClick, type }: ButtonProps) => {
 	return (
-		<button
-			style={{
-				backgroundColor: isActive ? "4009Bff" : "",
-			}}
-			onClick={onClick}
-		>
+		<button style={{ borderColor: color }} onClick={() => onClick(type, text)}>
 			{text}
 		</button>
 	);
