@@ -35,15 +35,11 @@ const CountriesCapitalsButtons = () => {
 		}
 	};
 
-	console.log(capitalsState);
 	useEffect(() => {
 		if (isPairSelected && isPairCorrect) {
 			setCountries(countriesState.filter((el) => el !== selectedCountry));
-		}
-		if (isPairSelected && isPairCorrect) {
 			setCapitals(capitalsState.filter((el) => el !== selectedCapital));
 		}
-		console.log(capitalsState);
 	}, [isPairSelected, isPairCorrect]);
 
 	const getButtonColor = (type: ButtonType, text: string): string | undefined => {
@@ -53,6 +49,11 @@ const CountriesCapitalsButtons = () => {
 		if (!isSelectedCapital && !isSelectedCountry) return;
 		if (isPairSelected && !isPairCorrect) return "red";
 		if (isSelectedCapital || isSelectedCountry) return "blue";
+	};
+
+	const Congratulations = () => {
+		if (capitalsState.length === 0 && countriesState.length === 0)
+			return <h1 className="congratulation"> CONGRATULATIONS</h1>;
 	};
 
 	return (
@@ -77,6 +78,7 @@ const CountriesCapitalsButtons = () => {
 					></Buttton>
 				))}
 			</div>
+			<Congratulations></Congratulations>
 		</>
 	);
 };
