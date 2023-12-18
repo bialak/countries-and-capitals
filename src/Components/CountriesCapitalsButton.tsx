@@ -1,6 +1,6 @@
-// import { ListFormat } from "typescript";
+import { ListFormat } from "typescript";
 import countriesCapitalsMap from "countries-capitals-map";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Buttton, { ButtonType } from "./Button";
 
 const shuffle = (array: string[]) => {
@@ -11,47 +11,55 @@ const countries: string[] = shuffle(Object.keys(countriesCapitalsMap));
 const capitals: string[] = shuffle(Object.values(countriesCapitalsMap));
 
 const CountriesCapitalsButtons = () => {
-	const [selectedCountry, setSelectedCountry] = useState(""); // TODO: missing typing - now you can set anything there
+	const [countriesState, setCountries] = useState([...countries]);
+	const [capitalsState, setCapitals] = useState([...capitals]);
+	const [selectedCountry, setSelectedCountry] = useState("");
 	const [selectedCapital, setSelectedCapital] = useState("");
 
 	const isPairSelected = selectedCountry && selectedCapital;
 	const isPairCorrect = isPairSelected && countriesCapitalsMap[selectedCountry] === selectedCapital;
 
 	const handleClick = (type: ButtonType, text: string) => {
+		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
+		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
 		if (type === ButtonType.CAPITAL) {
 			setSelectedCapital(text);
 		} else if (type === ButtonType.COUNTRY) {
 			setSelectedCountry(text);
 		}
-		if (!selectedCapital || !selectedCountry) return;
-		// if (countriesCapitalsMap[selectedCountry] === selectedCapital) {
-		// 	console.log("nana");
-		// }
-		// if (countriesCapitalsMap[selectedCountry] !== selectedCapital) {
-		// 	console.log("dada");
-		// }
+		if (!isSelectedCapital && !isSelectedCountry) {
+			return;
+		}
+		if (!selectedCapital || !selectedCountry) {
+			return;
+		}
 	};
+
+	console.log(capitalsState);
+	useEffect(() => {
+		if (isPairSelected && isPairCorrect) {
+			setCountries(countriesState.filter((el) => el !== selectedCountry));
+		}
+		if (isPairSelected && isPairCorrect) {
+			setCapitals(capitalsState.filter((el) => el !== selectedCapital));
+		}
+		console.log(capitalsState);
+	}, [isPairSelected, isPairCorrect]);
 
 	const getButtonColor = (type: ButtonType, text: string): string | undefined => {
 		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
 		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
-		// not selected by user - let's keep the default color
 
 		if (!isSelectedCapital && !isSelectedCountry) return;
 		if (isPairSelected && !isPairCorrect) return "red";
 		if (isSelectedCapital || isSelectedCountry) return "blue";
-
-		// if (selectedCountry === text) return "blue";
-		// if (selectedCapital === text) return "blue";
-		if (isPairSelected && !isPairCorrect) return "red";
 	};
 
 	return (
 		<>
 			<div className="countries">
-				{countries.map((country) => (
+				{countriesState.map((country) => (
 					<Buttton
-						// color={selectedCountry === country ? "blue" : undefined}
 						color={getButtonColor(ButtonType.COUNTRY, country)}
 						type={ButtonType.COUNTRY}
 						text={country}
@@ -60,7 +68,7 @@ const CountriesCapitalsButtons = () => {
 				))}
 			</div>
 			<div className="capitals">
-				{capitals.map((capital) => (
+				{capitalsState.map((capital) => (
 					<Buttton
 						color={getButtonColor(ButtonType.CAPITAL, capital)}
 						type={ButtonType.CAPITAL}
