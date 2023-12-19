@@ -2,7 +2,6 @@ export enum ButtonType {
 	COUNTRY = "COUNTRY",
 	CAPITAL = "CAPITAL",
 }
-// "4009Bff
 type ButtonProps = {
 	color: string | undefined;
 	text: string;

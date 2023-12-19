@@ -10,7 +10,7 @@ const shuffle = (array: string[]) => {
 const countries: string[] = shuffle(Object.keys(countriesCapitalsMap));
 const capitals: string[] = shuffle(Object.values(countriesCapitalsMap));
 
-const CountriesCapitalsButtons = () => {
+const CountriesCapitalsButtons = (type: ButtonType, text: string) => {
 	const [countriesState, setCountries] = useState([...countries]);
 	const [capitalsState, setCapitals] = useState([...capitals]);
 	const [selectedCountry, setSelectedCountry] = useState("");
@@ -20,15 +20,10 @@ const CountriesCapitalsButtons = () => {
 	const isPairCorrect = isPairSelected && countriesCapitalsMap[selectedCountry] === selectedCapital;
 
 	const handleClick = (type: ButtonType, text: string) => {
-		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
-		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
 		if (type === ButtonType.CAPITAL) {
 			setSelectedCapital(text);
 		} else if (type === ButtonType.COUNTRY) {
 			setSelectedCountry(text);
-		}
-		if (!isSelectedCapital && !isSelectedCountry) {
-			return;
 		}
 		if (!selectedCapital || !selectedCountry) {
 			return;
@@ -39,13 +34,21 @@ const CountriesCapitalsButtons = () => {
 		if (isPairSelected && isPairCorrect) {
 			setCountries(countriesState.filter((el) => el !== selectedCountry));
 			setCapitals(capitalsState.filter((el) => el !== selectedCapital));
+			setSelectedCountry("");
+			setSelectedCapital("");
 		}
-	}, [isPairSelected, isPairCorrect]);
+	}, [
+		selectedCapital,
+		selectedCountry,
+		capitalsState,
+		countriesState,
+		isPairSelected,
+		isPairCorrect,
+	]);
 
 	const getButtonColor = (type: ButtonType, text: string): string | undefined => {
 		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
 		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
-
 		if (!isSelectedCapital && !isSelectedCountry) return;
 		if (isPairSelected && !isPairCorrect) return "red";
 		if (isSelectedCapital || isSelectedCountry) return "blue";
@@ -58,6 +61,7 @@ const CountriesCapitalsButtons = () => {
 
 	return (
 		<>
+			<h1>Connect cities and their capitals to win the game </h1>
 			<div className="countries">
 				{countriesState.map((country) => (
 					<Buttton

@@ -1,4 +1,3 @@
-import "../styles/App.css";
 import "../countries-capitals-map";
 import CountriesCapitalsButton from "Components/CountriesCapitalsButton";
 
