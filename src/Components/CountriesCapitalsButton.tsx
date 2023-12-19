@@ -50,8 +50,8 @@ const CountriesCapitalsButtons = (type: ButtonType, text: string) => {
 		const isSelectedCapital = type === ButtonType.CAPITAL && text === selectedCapital;
 		const isSelectedCountry = type === ButtonType.COUNTRY && text === selectedCountry;
 		if (!isSelectedCapital && !isSelectedCountry) return;
-		if (isPairSelected && !isPairCorrect) return "red";
-		if (isSelectedCapital || isSelectedCountry) return "blue";
+		if (isPairSelected && !isPairCorrect) return "#d74747";
+		if (isSelectedCapital || isSelectedCountry) return "#ffd662";
 	};
 
 	const Congratulations = () => {
@@ -61,7 +61,7 @@ const CountriesCapitalsButtons = (type: ButtonType, text: string) => {
 
 	return (
 		<>
-			<h1>Connect cities and their capitals to win the game </h1>
+			<h1 className="header">Connect cities and their capitals to win the game </h1>
 			<div className="countries">
 				{countriesState.map((country) => (
 					<Buttton
