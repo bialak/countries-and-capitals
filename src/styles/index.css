@@ -61,4 +61,14 @@ button:hover {
 		20px 20px 0px #ef5097, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
 	margin: 0;
 	position: absolute;
+	animation: grow 2s linear;
+}
+
+@keyframes grow {
+	0% {
+		font-size: 6rem;
+	}
+	100% {
+		font-size: 8rem;
+	}
 }
