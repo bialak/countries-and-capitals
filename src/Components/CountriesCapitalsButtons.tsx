@@ -1,4 +1,3 @@
-import { ListFormat } from "typescript";
 import countriesCapitalsMap from "countries-capitals-map";
 import { useState, useEffect } from "react";
 import Buttton, { ButtonType } from "./Button";
@@ -10,7 +9,7 @@ const shuffle = (array: string[]) => {
 const countries: string[] = shuffle(Object.keys(countriesCapitalsMap));
 const capitals: string[] = shuffle(Object.values(countriesCapitalsMap));
 
-const CountriesCapitalsButtons = (type: ButtonType, text: string) => {
+const CountriesCapitalsButtons = () => {
 	const [countriesState, setCountries] = useState([...countries]);
 	const [capitalsState, setCapitals] = useState([...capitals]);
 	const [selectedCountry, setSelectedCountry] = useState("");
@@ -56,7 +55,7 @@ const CountriesCapitalsButtons = (type: ButtonType, text: string) => {
 
 	const Congratulations = () => {
 		if (capitalsState.length === 0 && countriesState.length === 0)
-			return <h1 className="congratulation"> CONGRATULATIONS</h1>;
+			return <h1 className="congratulation">CONGRATULATIONS!</h1>;
 	};
 
 	return (
