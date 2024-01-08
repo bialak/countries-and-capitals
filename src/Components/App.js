@@ -1,10 +1,10 @@
 import "../countries-capitals-map";
-import CountriesCapitalsButton from "Components/CountriesCapitalsButton";
+import CountriesCapitalsButtons from "Components/CountriesCapitalsButtons";
 
 function App() {
 	return (
 		<div className="App">
-			<CountriesCapitalsButton />
+			<CountriesCapitalsButtons />
 		</div>
 	);
 }
