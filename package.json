@@ -1,7 +1,7 @@
 {
-	"homepage": "https://bialak.github.io.countries-and-capitals",
 	"name": "countries-and-capitals",
 	"version": "0.1.0",
+	"homepage": "https://bialak.github.io.countries-and-capitals",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.17.0",
