@@ -23,9 +23,9 @@ In this project you can try yourself with connnecting capital to country. I foun
 ### Built With
 
 * ![Javascript][Javacript-logo]
-* ![Css][css-logo]
+* ![Css][Css-logo]
 * [![React][React.js]][React-url]
-
+* [![Typescript][Typescript-logo]][Typescript-url]
 
 
 ### Installation
@@ -55,8 +55,9 @@ Maybe you can guess which dog is mine ? :D
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Javacript-logo]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E
-[css-logo]: https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white
-[typescript-logo]: https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=TypeScript&logoColor=white
+[Css-logo]: https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white
+[Typescript-logo]: https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=TypeScript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
 
 In this project you can try yourself with connnecting capital to country. I found this exercise in the internet and i wanted to check my skills. If you want to look at my code or play game there are steps what you need to do : 
 
