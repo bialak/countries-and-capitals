@@ -25,7 +25,7 @@ In this project you can try yourself with connnecting capital to country. I foun
 * ![Javascript][Javacript-logo]
 * ![Css][css-logo]
 * ![Html][html-logo]
-* ![React][React.js]][React-url]
+* [![React][React.js]][React-url]
 
 
 
