@@ -1,4 +1,3 @@
-<img width="1393" alt="Screenshot 2024-10-23 at 18 03 03" src="https://github.com/user-attachments/assets/e48112fd-ccf6-4ade-b222-253dd24edb7e"><div align="center">
 
 <h3 align="center">countries-and-capitals</h3>
 
