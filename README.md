@@ -33,33 +33,29 @@ In this project you can try yourself with connnecting capital to country. I foun
 
 1. Clone the repo
    ```sh
-    git clone https://github.com/bialak/dog-slider.git
+    git clone https://github.com/bialak/countries-and-capitals.git.
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
 
-4. Download Live Server Extension in Visiual studio code or another code editor.
+3. If you will see errors in terminal ,you may need to downgrade your TypeScript version. To install a compatible version run
+   ```sh
+    npm install typescript@4.9.5 --save-dev
+   ```
 
-6. Right click on index.html and choose option "Open in Live Server"
+
+4. All you need to do is write in the terminal:
+    ```sh
+    npm start 
+   ```
    
 ### Contact
 
 Klaudia Biała - klaudiabiaa@gmail.com
 
 Project Link: https://bialak.github.io/dog-slider/
-
-Maybe you can guess which dog is mine ? :D
-
-
-
-In this project you can try yourself with connnecting capital to country. I found this exercise in the internet and i wanted to check my skills. If you want to look at my code or play game there are steps what you need to do : 
-
-1. Write git clone in terminal https://github.com/bialak/countries-and-capitals.git.
-2. Write command npm install.
-3. If you will see errors in terminal ,you may need to downgrade your TypeScript version. To install a compatible version, run: npm install typescript@4.9.5 --save-dev.
-4. All you need to do is write in the terminal: npm start  and open the browser.
 
 
 Enjoy the game ! :D 
