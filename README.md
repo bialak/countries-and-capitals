@@ -25,6 +25,7 @@ In this project you can try yourself with connnecting capital to country. I foun
 * ![Javascript][Javacript-logo]
 * ![Css][css-logo]
 * ![Html][html-logo]
+* ![React][React.js]][React-url]
 
 
 
@@ -52,7 +53,8 @@ Project Link: https://bialak.github.io/dog-slider/
 Maybe you can guess which dog is mine ? :D
 
 
-
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
 [Javacript-logo]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E
 [css-logo]: https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white
 [html-logo]:https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white
