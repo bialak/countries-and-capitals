@@ -55,7 +55,7 @@ In this project you can try yourself with connnecting capital to country. I foun
 
 Klaudia Biała - klaudiabiaa@gmail.com
 
-Project Link: https://bialak.github.io/dog-slider/
+Project Link: https://bialak.github.io/countries-and-capitals/
 
 
 Enjoy the game ! :D 
