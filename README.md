@@ -4,7 +4,7 @@
   <p align="center">
     In this project you can try yourself with connnecting capital to country.
     <br />
-    <a href="https://bialak.github.io/countries-and-capitals/">View Page</a>
+    <a href="https://bialak.github.io/countries-and-capitals/">View Demo</a>
     ·
     <a href="https://github.com/bialak/countries-and-capitals/issues/new">Report Bug</a>
   </p>
@@ -33,7 +33,7 @@ In this project you can try yourself with connnecting capital to country. I foun
 
 1. Clone the repo
    ```sh
-    git clone https://github.com/bialak/countries-and-capitals.git.
+    git clone https://github.com/bialak/countries-and-capitals.git
    ```
 2. Install NPM packages
    ```sh
