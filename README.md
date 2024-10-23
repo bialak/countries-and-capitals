@@ -40,13 +40,7 @@ In this project you can try yourself with connnecting capital to country. I foun
    npm install
    ```
 
-3. If you will see errors in terminal ,you may need to downgrade your TypeScript version. To install a compatible version run
-   ```sh
-    npm install typescript@4.9.5 --save-dev
-   ```
-
-
-4. All you need to do is write in the terminal:
+3. All you need to do is write in the terminal:
     ```sh
     npm start 
    ```
