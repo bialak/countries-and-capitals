@@ -72,4 +72,4 @@ Enjoy the game ! :D
 [Typescript-logo]: https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=TypeScript&logoColor=white
 [Typescript-url]: https://www.typescriptlang.org/
 [Jest-logo]: https://img.shields.io/badge/Jest-%23C21325.svg?style=for-the-badge&logo=Jest&logoColor=white
-[Jest-url]: [https://www.typescriptlang.org/](https://jestjs.io/)
+[Jest-url]: https://jestjs.io/
